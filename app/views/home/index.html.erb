@@ -1,0 +1,35 @@
+<!-- Блок регистрации и авторизации  -->
+<% if user_signed_in? %>
+    <span>Здравствуйте, <%= current_user.email %></span>
+    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+<% else %>
+    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+<% end %><!-- End: Блок регистрации и авторизации  -->
+
+
+<h1 class="text-info">Заказы</h1>
+<h5 class="text-info ml-3" style="display: contents;"> Наименование группы </h5>
+<i class="fa fa-indent" aria-hidden="true"></i> 
+<%= icon('fa-brands', 'font-awesome')%>
+<%= icon('fa-solid', 'user-secret')%>
+<%= icon('fa-regular', 'bell')%>
+<i class="fa-solid fa-map-pin"></i>
+
+<!-- Тосты — это легкие уведомления, имитирующие push-уведомления, популярные в мобильных и настольных операционных системах. Они созданы с помощью flexbox, поэтому их легко выравнивать и позиционировать.
+https://getbootstrap.com/docs/5.2/components/toasts/ -->
+<br>
+<button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+  </div>
+</div><!-- Js-location: myscript/scrypt -->
